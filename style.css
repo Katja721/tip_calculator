@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+/* - Very dark cyan: hsl(183, 100%, 38%)
+- Dark grayish cyan: hsl(186, 14%, 43%)
+- Grayish cyan: hsl(184, 14%, 56%)
+- Light grayish cyan: hsl(185, 41%, 84%)
+- Very light grayish cyan: hsl(189, 41%, 97%)
+- White: hsl(0, 0%, 100%) */
+:root {
+  --very-dark-cyan: #00494d;
+  --dark-grayish-cyan: #5e7a7d;
+  --grayish-cyan: #7f9c9f;
+  --light-grayish-cyan: #c5e4e7;
+  --very-light-grayish-cyan: #f4fafa;
+  --white: #ffffff;
+}
+body {
+  font-family: "Space Mono", monospace;
+  margin: 0;
+  background-color: var(--grayish-cyan);
+  padding: 1rem 20rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input {
+  text-align: end;
+  border: none;
+  background: none;
+}
+.logo {
+  margin: 3rem 18rem;
+  width: 10%;
+}
+.calculator {
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  background-color: var(--white);
+}
+.billInput {
+  background-color: var(--very-light-grayish-cyan);
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 100%;
+}
+.billValue {
+  font-family: "Space Mono", monospace;
+  color: var(--dark-grayish-cyan);
+  width: 100%;
+}
+.inputs {
+  color: var(--very-dark-cyan);
+  margin: 0 2rem 0 0;
+}
+.billInput {
+  display: flex;
+}
+.dollar {
+  margin: 0.2rem 0;
+  height: 0.9rem;
+}
+.tip-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 12px 12px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "button_5 button_10 button_15"
+    "button_25 button_50 button_custom";
+  width: 113%;
+}
+.button_custom button {
+  grid-area: button_custom;
+  color: var(--dark-grayish-cyan);
+  background-color: var(--very-light-grayish-cyan);
+}
+.tip-buttons button {
+  color: var(--white);
+  background-color: var(--very-dark-cyan);
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-family: "Space Mono", monospace;
+}
+.button_5 {
+  grid-area: button_5;
+}
+
+.button_10 {
+  grid-area: button_10;
+}
+
+.button_15 {
+  grid-area: button_15;
+}
+
+.button_25 {
+  grid-area: button_25;
+}
+
+.button_50 {
+  grid-area: button_50;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+button.button_custom {
+  grid-area: button_custom;
+  color: var(--dark-grayish-cyan);
+  background-color: var(--very-light-grayish-cyan);
+}
+.btnTip-heading {
+  font-size: 0.8em;
+  color: var(--very-dark-cyan);
+}
+.peopleInput {
+  display: flex;
+  background-color: var(--very-light-grayish-cyan);
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+.people-heading,
+.tip-heading,
+.inputLabel {
+  font-size: 0.8em;
+}
+.numPeople {
+  font-family: "Space Mono", monospace;
+  color: var(--dark-grayish-cyan);
+  width: 100%;
+}
+.people {
+  margin: 0.2rem 0;
+  height: 0.9rem;
+}
+.results {
+  width: 45%;
+  background-color: var(--very-dark-cyan);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 0.1fr 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 35px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tip"
+    "total"
+    "reset";
+  padding: 3rem 2rem 1rem 2rem;
+  margin: 0 0 0 3rem;
+}
+
+.tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tip-heading tip-value"
+    "tip-person tip-value";
+  grid-area: tip;
+}
+
+.tip-heading {
+  grid-area: tip-heading;
+  color: var(--light-grayish-cyan);
+  font-size: 0.8em;
+}
+.perPerson {
+  color: var(--grayish-cyan);
+  font-size: 0.7em;
+}
+.tip-person {
+  grid-area: tip-person;
+}
+
+.tip-value {
+  grid-area: tip-value;
+  color: #42bfb4;
+  font-size: 2em;
+  align-self: center;
+}
+
+.total {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0.1fr 0.1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "total-heading total-value"
+    "total-person total-value";
+  grid-area: total;
+}
+
+.total-heading {
+  color: var(--light-grayish-cyan);
+  font-size: 0.8em;
+
+  grid-area: total-heading;
+}
+
+.total-person {
+  grid-area: total-person;
+}
+
+.total-value {
+  grid-area: total-value;
+  font-size: 2em;
+  color: #42bfb4;
+  align-self: center;
+}
+
+.reset {
+  grid-area: reset;
+  height: fit-content;
+  padding: 0.5rem 0;
+  background-color: #42bfb4;
+  opacity: 0.1;
+  text-transform: uppercase;
+  border: none;
+  color: var(--very-dark-cyan);
+  align-self: end;
+  border-radius: 4px;
+}
